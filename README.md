@@ -1,32 +1,21 @@
-🌸 Meu Aplicativo
+🌸 Meu App de Notas 🤩💻🪶
 
-✨ Bem-vindo ao meu aplicativo! ✨
+✨ Seu espaço para organizar, anotar e guardar seus momentos.
 
-Um projeto feito com carinho 💕
-Espero que você goste da experiência!
+📲 Baixe o aplicativo
 
----
+<p align="center">
+  <a href="https://github.com/iaradc2020-ai/Vers-o-APK/releases/download/V1.0/LeveNote.apk">
+    <img src="https://img.shields.io/badge/📲%20BAIXAR%20APK-V1.0-ff69b4?style=for-the-badge" alt="Baixar APK">
+  </a>
+</p>💖 Sobre o app
 
-📱 Baixe o aplicativo
+Um aplicativo feito para ajudar você a organizar suas anotações, ideias, estudos e momentos importantes de forma simples e prática. 🌷
 
-Clique no botão abaixo para baixar o aplicativo:
-
-👉 "💗 DOWNLOAD DO APK 💗" (https://github.com/iaradc2020-ai/Vers-o-APK/releases/tag/1.0)
-
-📥 Baixe o arquivo ".apk" na seção Assets e instale no seu dispositivo Android.
-
----
-
-✨ Versão
-
-1.0 🌷
-
-Novidades e melhorias poderão ser adicionadas futuramente. 💫
+🚀 Versão: V1.0
+📱 Plataforma: Android
+✨ Status: Lançamento inicial
 
 ---
 
-💖 Obrigada por visitar!
-
-Se você gostou do projeto, considere deixar uma ⭐ no repositório!
-
-Feito com carinho 💕
+🌸 Feito com carinho para você. 💕
