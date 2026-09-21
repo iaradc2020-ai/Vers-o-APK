@@ -9,17 +9,17 @@ Espero que você goste da experiência!
 
 📱 Baixe o aplicativo
 
-Clique no botão abaixo para baixar a versão mais recente:
+Clique no botão abaixo para baixar o aplicativo:
 
-👉 "💗 DOWNLOAD DO APK 💗" (https://github.com/iaradc2020/Vers-o-APK/releases/latest)
+👉 "💗 DOWNLOAD DO APK 💗" (https://github.com/iaradc2020-ai/Vers-o-APK/releases/tag/1.0)
 
-«📥 Baixe o arquivo ".apk" e instale no seu dispositivo Android.»
+📥 Na página que abrir, procure a seção Assets e clique no arquivo ".apk" para baixar e instalar no seu dispositivo Android.
 
 ---
 
 ✨ Versão
 
-v1.0.0 🌷
+1.0 🌷
 
 Novidades e melhorias poderão ser adicionadas futuramente. 💫
 
