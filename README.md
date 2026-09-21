@@ -13,7 +13,7 @@ Clique no botão abaixo para baixar o aplicativo:
 
 👉 "💗 DOWNLOAD DO APK 💗" (https://github.com/iaradc2020-ai/Vers-o-APK/releases/tag/1.0)
 
-📥 Na página que abrir, procure a seção Assets e clique no arquivo ".apk" para baixar e instalar no seu dispositivo Android.
+📥 Baixe o arquivo ".apk" na seção Assets e instale no seu dispositivo Android.
 
 ---
 
