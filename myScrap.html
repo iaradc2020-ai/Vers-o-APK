@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Scrapbook</title>
+  
+  <!-- Fontes Fofas e Cursivas Vintage -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    /* VARIÁVEIS DE TEMAS COM PAPEL DE PAREDE ESPECÍFICO */
+    :root {
+      --bg-color: #f4ece1;
+      --bg-pattern: radial-gradient(#d3c0ad 1px, transparent 1px);
+      --text-main: #4a3e3d;
+      --header-title: #8b5e68;
+      --book-bg: #fdf6e7;
+      --book-lines: #e5d5c5;
+      --modal-bg: rgba(40, 30, 30, 0.7);
+      --btn-bg: #8b5e68;
+      --btn-hover: #734a53;
+    }
+
+    [data-theme="default"] {
+      --bg-color: #f4ece1;
+      --bg-pattern: radial-gradient(#d3c0ad 1px, transparent 1px);
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #1e1b18;
+      --bg-pattern: radial-gradient(#3a332e 1px, transparent 1px);
+      --text-main: #e2d7c9;
+      --header-title: #d4a373;
+      --book-bg: #2b2622;
+      --book-lines: #3d3530;
+      --modal-bg: rgba(10, 8, 7, 0.85);
+      --btn-bg: #b08968;
+      --btn-hover: #997352;
+    }
+
+    [data-theme="vintage-rose"] {
+      --bg-color: #f8e8e8;
+      /* Paisagem romântica: céu rosado, colinas floridas e flores delicadas. */
+      --bg-pattern: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIHNsaWNlIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9InNreSIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZjhkZmU1Ii8+PHN0b3Agb2Zmc2V0PSIuNjIiIHN0b3AtY29sb3I9IiNmOWVlZTAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNlOGM5YjkiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iaGlsbCIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjYjZjNWEwIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjN2U5ODc0Ii8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0iZ3JhaW4iIHdpZHRoPSI5MCIgaGVpZ2h0PSI5MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxOCIgcj0iMS41IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMyIvPjxjaXJjbGUgY3g9IjYyIiBjeT0iNjEiIHI9IjEiIGZpbGw9IiM5YzZkNjkiIG9wYWNpdHk9Ii4xOCIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iMTAwMCIgZmlsbD0idXJsKCNza3kpIi8+PGNpcmNsZSBjeD0iMTI3MCIgY3k9IjE3MCIgcj0iNzYiIGZpbGw9IiNmZmYyY2YiIG9wYWNpdHk9Ii44Ii8+PHBhdGggZD0iTTAgNTEwIFExODAgNDAwIDM2MCA1MDAgVDc0MCA0ODUgVDExMjAgNDcwIFQxNjAwIDQ4MCBWMTAwMCBIMFoiIGZpbGw9IiNkNWI2YjQiIG9wYWNpdHk9Ii42NSIvPjxwYXRoIGQ9Ik0wIDYxMCBRMjIwIDQ3MCA0NzAgNjAwIFQ5MDAgNTcwIFQxMzAwIDU4MCBUMTYwMCA1NDAgVjEwMDAgSDBaIiBmaWxsPSJ1cmwoI2hpbGwpIi8+PHBhdGggZD0iTTAgNzMwIFEyMzAgNjIwIDQ2MCA3MTAgVDkwMCA3MDAgVDEzMDAgNjc1IFQxNjAwIDcyMCBWMTAwMCBIMFoiIGZpbGw9IiM2ZjhiNjgiLz48cGF0aCBkPSJNMCA4NDAgUTI2MCA3NjAgNTIwIDgzMCBUMTA1MCA4MjAgVDE2MDAgODAwIFYxMDAwIEgwWiIgZmlsbD0iI2E5Yjk4YSIvPjxnIGZpbGw9IiNmZmYwZjIiIHN0cm9rZT0iI2M5ODA5NCIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuOTUiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE3MCA2OTApIj48Y2lyY2xlIHI9IjEwIiBjeT0iLTE4Ii8+PGNpcmNsZSByPSIxMCIgY3g9IjE4Ii8+PGNpcmNsZSByPSIxMCIgY3k9IjE4Ii8+PGNpcmNsZSByPSIxMCIgY3g9Ii0xOCIvPjxjaXJjbGUgcj0iOCIgY3k9Ii0xMiIgY3g9Ii0xMiIvPjxjaXJjbGUgcj0iNyIgZmlsbD0iI2Q5YWQ2NSIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzkwIDc1NSkgc2NhbGUoMS4zKSI+PGNpcmNsZSByPSIxMCIgY3k9Ii0xOCIvPjxjaXJjbGUgcj0iMTAiIGN4PSIxOCIvPjxjaXJjbGUgcj0iMTAiIGN5PSIxOCIvPjxjaXJjbGUgcj0iMTAiIGN4PSItMTgiLz48Y2lyY2xlIHI9IjgiIGN5PSItMTIiIGN4PSItMTIiLz48Y2lyY2xlIHI9IjciIGZpbGw9IiNkOWFkNjUiLz48L2c+PC9nPjxnIHN0cm9rZT0iIzYxN2M1OCIgc3Ryb2tlLXdpZHRoPSI1IiBmaWxsPSJub25lIj48cGF0aCBkPSJNOTAgMTAwMCBRMTEwIDg2MCAxODAgNzkwIE0xNDgwIDEwMDAgUTE0NTAgODUwIDEzOTAgODEwIi8+PHBhdGggZD0iTTEyNSA5MDAgcS02NSAtNjAgLTg1IC0yMCBxNTUgNTAgODUgMjAgTTE0NTAgOTAwIHE3MCAtNjUgOTUgLTIwIHEtNjAgNDggLTk1IDIwIi8+PC9nPjxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjZ3JhaW4pIi8+PC9zdmc+");
+      --bg-size: cover;
+      --text-main: #6b4c55;
+      --header-title: #a84f69;
+      --book-bg: #fefae0;
+      --book-lines: #faedcd;
+    }
+
+    [data-theme="antique-paper"] {
+      --bg-color: #d8c3a5;
+      /* Paisagem antiga: montanhas, campo dourado e horizonte envelhecido. */
+      --bg-pattern: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIHNsaWNlIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9InNreSIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZDdjMTlmIi8+PHN0b3Agb2Zmc2V0PSIuNiIgc3RvcC1jb2xvcj0iI2YxZGZiZCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2M1YTc3ZSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJoaWxsIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNhNmEwNzgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM2MjZlNTAiLz48L2xpbmVhckdyYWRpZW50PjxwYXR0ZXJuIGlkPSJwYXBlciIgd2lkdGg9IjE0MCIgaGVpZ2h0PSIxMTAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik04IDIwIGwzMCAtNCBNNzAgODIgbDQ1IDMgTTIyIDk4IGwxOCAtMiIgc3Ryb2tlPSIjOGE2OTQ3IiBvcGFjaXR5PSIuMTgiLz48Y2lyY2xlIGN4PSI5NSIgY3k9IjI0IiByPSIyIiBmaWxsPSIjZmZmNGQ4IiBvcGFjaXR5PSIuNCIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iMTAwMCIgZmlsbD0idXJsKCNza3kpIi8+PGNpcmNsZSBjeD0iMTI0MCIgY3k9IjE4MCIgcj0iODgiIGZpbGw9IiNmZmYwYzciIG9wYWNpdHk9Ii44Ii8+PHBhdGggZD0iTTAgNTQwIEwxODAgMzQwIDMzMCA1MDAgNTIwIDI5MCA3MzAgNTIwIDkzMCAzNTAgMTEyMCA1MTAgMTMyMCAzMjAgMTYwMCA1NDAgVjEwMDAgSDBaIiBmaWxsPSIjYjRhMTdmIiBvcGFjaXR5PSIuNzUiLz48cGF0aCBkPSJNMCA2NDAgUTI1MCA0ODAgNTAwIDYxMCBUMTAwMCA2MDAgVDE2MDAgNTkwIFYxMDAwIEgwWiIgZmlsbD0idXJsKCNoaWxsKSIvPjxwYXRoIGQ9Ik0wIDc3MCBRMjYwIDY1MCA1MzAgNzQwIFQxMDUwIDcyMCBUMTYwMCA3NjAgVjEwMDAgSDBaIiBmaWxsPSIjN2M4MDVhIi8+PHBhdGggZD0iTTAgOTAwIFEzMDAgNzkwIDYwMCA4ODAgVDEyMDAgODYwIFQxNjAwIDkwMCBWMTAwMCBIMFoiIGZpbGw9IiNiNWEwNzgiLz48ZyBzdHJva2U9IiM2ZDY4NDkiIHN0cm9rZS13aWR0aD0iNyIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTTE4MCAxMDAwIFEyMTAgODMwIDI4MCA3NjAgTTE0MTAgMTAwMCBRMTM5MCA4MzAgMTMyMCA3NzAiLz48cGF0aCBkPSJNMjMwIDg3NSBxLTgwIC02MCAtMTA1IC0xMCBxNTUgNTUgMTA1IDEwIE0xMzYwIDg3MCBxNzUgLTYwIDEwNSAtNSBxLTU1IDU1IC0xMDUgNSIvPjwvZz48ZyBmaWxsPSIjZThkM2E5IiBvcGFjaXR5PSIuOSI+PHBhdGggZD0iTTYwMCA2MTAgbDAgLTkwIDU1IDAgMCA5MCBNNjUwIDUyMCBsMjUgLTM1IDI1IDM1IE01OTAgNjEwIGgxMjAiLz48cGF0aCBkPSJNNzEwIDYxMCB2LTY1IGg0NSB2NjUiLz48L2c+PHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iMTAwMCIgZmlsbD0idXJsKCNwYXBlcikiLz48L3N2Zz4=");
+      --bg-size: cover;
+      --text-main: #33272a;
+      --header-title: #59405c;
+      --book-bg: #f7f4ef;
+      --book-lines: #e2dcd5;
+    }
+
+    [data-theme="midnight-velvet"] {
+      --bg-color: #22223b;
+      /* Paisagem noturna: lua crescente, céu estrelado e montanhas ao luar. */
+      --bg-pattern: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIHNsaWNlIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9InNreSIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjMjAyMzQ0Ii8+PHN0b3Agb2Zmc2V0PSIuNTgiIHN0b3AtY29sb3I9IiM0NTQ1NjgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM4Yjc4OTAiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0ibW91bnQiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzRlNTI2ZiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzI1MmI0MyIvPjwvbGluZWFyR3JhZGllbnQ+PHBhdHRlcm4gaWQ9InN0YXJzIiB3aWR0aD0iMTcwIiBoZWlnaHQ9IjEzMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyNiIgcj0iMiIgZmlsbD0iI2ZmZjBjMiIvPjxjaXJjbGUgY3g9Ijk4IiBjeT0iNzciIHI9IjEuNSIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjE0NSIgY3k9IjIwIiByPSIxIiBmaWxsPSIjZDlkNGZmIi8+PHBhdGggZD0iTTYwIDEwMCB2OCBNNTYgMTA0IGg4IiBzdHJva2U9IiNmOGU4YzgiIHN0cm9rZS13aWR0aD0iMS41Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI3NreSkiLz48Y2lyY2xlIGN4PSIxMjQwIiBjeT0iMTgwIiByPSI4NSIgZmlsbD0iI2Y4ZThjOCIvPjxjaXJjbGUgY3g9IjEyNzUiIGN5PSIxNTAiIHI9IjgyIiBmaWxsPSIjNDU0NTY4Ii8+PHBhdGggZD0iTTAgNTcwIEwxODAgMzgwIDMzMCA1MjAgNTIwIDMwMCA3MzAgNTU1IDkzMCAzNjAgMTEyMCA1NDAgMTMyMCAzMzAgMTYwMCA1NzAgVjEwMDAgSDBaIiBmaWxsPSIjNjY2NDgxIi8+PHBhdGggZD0iTTAgNjkwIEwyNTAgNDgwIDQ1MCA2NTAgNzIwIDQ1MCA5MzAgNjgwIDExOTAgNDgwIDE0MjAgNjUwIDE2MDAgNTMwIFYxMDAwIEgwWiIgZmlsbD0idXJsKCNtb3VudCkiLz48cGF0aCBkPSJNMCA4MDAgUTI1MCA3MDAgNDgwIDc5MCBUOTUwIDc4MCBUMTMwMCA3NjAgVDE2MDAgNzkwIFYxMDAwIEgwWiIgZmlsbD0iIzIwMjgzZCIvPjxnIGZpbGw9IiNmNGQ2YTEiIG9wYWNpdHk9Ii45NSI+PGNpcmNsZSBjeD0iMTkwIiBjeT0iMTYwIiByPSIzIi8+PGNpcmNsZSBjeD0iMzcwIiBjeT0iMjQ1IiByPSIyIi8+PGNpcmNsZSBjeD0iNzAwIiBjeT0iMTMwIiByPSIzIi8+PGNpcmNsZSBjeD0iODgwIiBjeT0iMjIwIiByPSIyIi8+PGNpcmNsZSBjeD0iMTA0MCIgY3k9Ijk1IiByPSIyLjUiLz48Y2lyY2xlIGN4PSIxNDUwIiBjeT0iMjgwIiByPSIzIi8+PC9nPjxnIHN0cm9rZT0iIzIwMjgzZCIgc3Ryb2tlLXdpZHRoPSI4IiBmaWxsPSJub25lIj48cGF0aCBkPSJNMTAwIDEwMDAgUTEzMCA4NTAgMjAwIDgwMCBNMTUwMCAxMDAwIFExNDcwIDg1MCAxNDAwIDgwMCIvPjxwYXRoIGQ9Ik0xNDAgODk1IHEtNzAgLTU1IC0xMDAgLTEwIHE1NSA1MCAxMDAgMTAgTTE0NjAgOTAwIHE3MCAtNTUgMTAwIC0xMCBxLTU1IDUwIC0xMDAgMTAiLz48L2c+PHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iMTAwMCIgZmlsbD0idXJsKCNzdGFycykiLz48L3N2Zz4=");
+      --bg-size: cover;
+      --text-main: #f2e9e4;
+      --header-title: #c8b6d8;
+      --book-bg: #2a2a40;
+      --book-lines: #3b3b58;
+    }
+
+    /* RESET E ESTILOS GERAIS */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      background-color: var(--bg-color);
+      background-image: var(--bg-pattern);
+      background-size: var(--bg-size, 20px 20px);
+      background-attachment: fixed;
+      background-position: center center;
+      background-repeat: repeat;
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Os três temas especiais usam uma paisagem panorâmica, não ladrilhos ou quadrados. */
+    body[data-theme="vintage-rose"], body[data-theme="antique-paper"], body[data-theme="midnight-velvet"] {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    body[data-theme="vintage-rose"] .dashboard-notes,
+    body[data-theme="antique-paper"] .dashboard-notes,
+    body[data-theme="midnight-velvet"] .dashboard-notes {
+      backdrop-filter: blur(3px);
+      background: rgba(255, 250, 242, .88);
+    }
+
+    /* BOTÃO DE CONFIGURAÇÕES DISCRETO */
+    .settings-icon-btn {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      background: var(--btn-bg);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s, background 0.2s;
+      z-index: 10;
+    }
+
+    .settings-icon-btn:hover {
+      transform: scale(1.1);
+      background: var(--btn-hover);
+    }
+
+    /* CABEÇALHO */
+    header {
+      text-align: center;
+      margin-bottom: 25px;
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      isolation: isolate;
+    }
+    header::before, header::after {
+      position: absolute;
+      top: 2px;
+      z-index: -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 112px;
+      height: 82px;
+      border: 1px dashed rgba(139, 94, 104, .48);
+      border-radius: 44% 56% 52% 48%;
+      background: rgba(255, 248, 235, .52);
+      box-shadow: 2px 4px 8px rgba(85, 58, 45, .12);
+      font-size: 2rem;
+      letter-spacing: 5px;
+      transform: rotate(-9deg);
+      pointer-events: none;
+    }
+    header::before { content: "🌷 🦋"; left: max(1%, calc(50% - 390px)); }
+    header::after { content: "📚 ✨"; right: max(1%, calc(50% - 390px)); transform: rotate(8deg); }
+    @media(max-width:700px) { header::before, header::after { width:64px; height:54px; font-size:1.25rem; letter-spacing:0; top:0; } header::before { left:0; } header::after { right:0; } }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.2rem;
+      color: var(--header-title);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      margin-bottom: 5px;
+    }
+
+    p.subtitle {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      font-style: italic;
+    }
+
+    .btn-create {
+      background: var(--btn-bg);
+      color: #fff;
+      border: 2px dashed rgba(255,255,255,0.6);
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      font-family: 'Playfair Display', serif;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      margin-top: 15px;
+    }
+
+    .btn-create:hover {
+      background: var(--btn-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Estante e painel lateral de lembretes */
+    .dashboard-layout { width:100%; max-width:1500px; display:grid; grid-template-columns:minmax(0, 1fr) 300px; gap:24px; align-items:start; }
+    .dashboard-layout .shelf-container { max-width:none; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:28px 20px; padding:20px 10px; align-content:start; }
+    .dashboard-notes { background:rgba(255,250,242,.92); color:#594744; border:1px solid #dfcfc3; border-radius:14px; padding:18px; box-shadow:0 5px 16px #00000012; position:sticky; top:18px; }
+    .dashboard-notes h2 { font-family:'Dancing Script',cursive; font-size:2rem; color:#8b5e68; margin-bottom:16px; text-align:center; }
+    .dashboard-notes h3 { font-size:1rem; margin:8px 0; }
+    .panel-hint { font: .78rem 'Playfair Display',serif; opacity:.75; margin-bottom:10px; }
+    .visual-reminder-section { margin-top:0; padding-top:0; }
+    .image-upload-btn,.clear-visual-btn { display:inline-block; border:1px solid #cdb7ad; border-radius:8px; padding:7px 9px; background:#fffaf4; color:#76545a; cursor:pointer; font:.78rem 'Playfair Display',serif; margin:4px 0 8px; }
+    .visual-reminder-box { min-height:110px; border:1px dashed #d0b9ad; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:8px; color:#9a8580; font:.8rem 'Playfair Display',serif; text-align:center; overflow:hidden; background:#fffaf4; }
+    .visual-reminder-box img { display:block; max-width:100%; max-height:220px; object-fit:contain; border-radius:5px; }
+    .mini-calendar { margin-top:18px; padding:14px 12px 12px; border:1px solid #dfcfc3; border-radius:12px; background:rgba(255,250,242,.8); }
+    .mini-calendar-head { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:12px; }
+    .mini-calendar-head h3 { margin:0; text-align:center; color:#76545a; font-size:1rem; }
+    .calendar-nav { border:1px solid #d7c4b8; border-radius:50%; width:28px; height:28px; background:#fffaf4; color:#76545a; cursor:pointer; font-size:1.1rem; }
+    .calendar-grid { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:4px; text-align:center; }
+    .calendar-weekday { font-size:.72rem; opacity:.7; padding:4px 0; }
+    .calendar-day { min-width:0; padding:6px 0; border:0; border-radius:50%; background:transparent; color:#594744; font: .8rem 'Playfair Display',serif; cursor:pointer; }
+    .calendar-day:hover { background:#eadbd0; }
+    .calendar-day.today { border:1px solid #9b796b; font-weight:bold; }
+    .calendar-day.selected { background:#8b9270; color:white; }
+    .calendar-day.empty { cursor:default; }
+    .calendar-selected { margin-top:10px; text-align:center; font-size:.78rem; opacity:.8; }
+    @media(max-width:1050px) { .dashboard-layout { grid-template-columns:1fr; } .dashboard-layout .shelf-container { grid-template-columns:repeat(3,minmax(0,1fr)); } .dashboard-notes { position:static; } }
+    @media(max-width:620px) { .dashboard-layout .shelf-container { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 10px; } .dashboard-notes { width:100%; } }
+
+    /* ESTANTE DE LIVROS */
+    .shelf-container {
+      width: 100%;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 40px;
+      padding: 20px 10px;
+      justify-items: center;
+    }
+
+    .book-item {
+      width: 100%;
+      max-width: 240px;
+      height: 310px;
+      border-radius: 6px 16px 16px 6px;
+      padding: 18px 12px 18px 24px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      box-shadow: 6px 10px 18px rgba(0,0,0,0.25), inset 14px 0 18px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 14px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .book-item:hover {
+      transform: translateY(-8px) rotate(1deg);
+      box-shadow: 10px 14px 22px rgba(0,0,0,0.3);
+    }
+
+    .book-cover-frame {
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      outline: 1px dashed rgba(255, 255, 255, 0.5);
+      outline-offset: -5px;
+      padding: 12px 8px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(2px);
+    }
+
+    .book-ornament {
+      font-size: 1.3rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 5px;
+    }
+
+    .book-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.3rem;
+      line-height: 1.1;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+      word-break: break-word;
+      padding: 0 5px;
+    }
+
+    /* MODAL DO LIVRO ABERTO */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--modal-bg);
+      backdrop-filter: blur(5px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .modal-overlay.active { display: flex; }
+
+    .opened-book {
+      background: var(--book-bg);
+      width: 100%;
+      max-width: 950px;
+      height: 90vh;
+      border-radius: 8px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      position: relative;
+      padding: 45px 50px 50px 75px;
+      display: flex;
+      flex-direction: column;
+      /* Folha branca: as linhas horizontais são desenhadas somente na área escrita. */
+      background-image: none;
+      border: 1px solid rgba(0,0,0,0.15);
+      transition: background 0.3s;
+      overflow: visible; /* Permite que a fita sobressaia do topo da folha */
+    }
+
+    .opened-book::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 55px;
+      width: 2px;
+      background-color: #e8a5a5;
+    }
+
+    /* FITA ADESIVA QUE VAZA/SAI DA FOLHA */
+    .washi-tape {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-1.5deg);
+      width: 170px;
+      height: 32px;
+      border: 1px dashed rgba(255,255,255,0.6);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      z-index: 10;
+      opacity: 0.92;
+      backdrop-filter: blur(1px);
+    }
+
+    /* CARIMBO FIXO NO CANTO SUPERIOR DIREITO */
+    .stamp-badge {
+      position: absolute;
+      top: 25px;
+      right: 70px;
+      border: 2px dashed #b85c5c;
+      color: #b85c5c;
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      transform: rotate(-8deg);
+      background: rgba(255, 240, 240, 0.75);
+      display: none;
+      pointer-events: none;
+      letter-spacing: 1px;
+      z-index: 2;
+    }
+    .stamp-badge.active { display: block; }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: var(--btn-bg);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      z-index: 15;
+    }
+
+    .close-btn:hover { transform: scale(1.1); }
+
+    /* BARRA DE FERRAMENTAS */
+    .editor-toolbar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+      align-items: center;
+      background: rgba(0,0,0,0.04);
+      padding: 6px 12px;
+      border-radius: 6px;
+      width: fit-content;
+      position: relative;
+      z-index: 5;
+    }
+
+    .tool-btn {
+      background: transparent;
+      border: 1px solid rgba(0,0,0,0.2);
+      border-radius: 4px;
+      padding: 3px 9px;
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--text-main);
+      font-size: 0.85rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .tool-btn:hover { background: rgba(0,0,0,0.1); }
+
+    /* PALETAS E MENUS SUSPENSOS */
+    .highlighter-palette, .stamp-palette, .sticker-palette {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--book-bg);
+      border: 1px solid rgba(0,0,0,0.2);
+      padding: 6px;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      gap: 6px;
+      z-index: 20;
+      margin-top: 5px;
+    }
+    .highlighter-palette.active, .stamp-palette.active, .sticker-palette.active { display: flex; }
+
+    .color-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 1px solid rgba(0,0,0,0.2);
+      transition: transform 0.15s;
+    }
+    .color-dot:hover { transform: scale(1.2); }
+
+    .stamp-option {
+      padding: 4px 8px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 4px;
+      background: rgba(255,255,255,0.5);
+    }
+    .stamp-option:hover { background: var(--btn-bg); color: #fff; }
+
+    .sticker-option {
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.4);
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    .sticker-option:hover { background: rgba(0,0,0,0.1); }
+
+    /* ADESIVOS MOVÍVEIS NA PÁGINA */
+    .movable-sticker {
+      position: absolute;
+      font-size: 2.2rem;
+      cursor: grab;
+      user-select: none;
+      z-index: 4;
+      filter: drop-shadow(2px 3px 4px rgba(0,0,0,0.2));
+      transition: transform 0.1s;
+    }
+    .movable-sticker:active { cursor: grabbing; }
+
+    /* Adesivos com tamanho fixo (1, 2 ou 3) e posição livre no livro */
+    .movable-sticker {
+      position: absolute; width: 68px; height: 68px; padding: 4px; box-sizing: border-box;
+      cursor: grab; user-select: none; z-index: 12; touch-action: none;
+      filter: drop-shadow(2px 4px 5px rgba(0,0,0,.22));
+      resize: none; overflow: visible; min-width: 0; min-height: 0;
+    }
+    .movable-sticker img { display:block; width:100%; height:100%; object-fit:contain; pointer-events:none; }
+    .sticker-remove { display:none; position:absolute; top:-8px; right:-8px; width:24px; height:24px; border:0; border-radius:50%;
+      background:#9b4b55; color:white; font:bold 16px sans-serif; cursor:pointer; box-shadow:0 2px 5px #0003; }
+    .sticker-option { width:48px; height:48px; display:flex; align-items:center; justify-content:center; padding:3px; cursor:pointer;
+      border-radius:5px; background:rgba(255,255,255,.55); border:1px solid rgba(0,0,0,.12); }
+    .sticker-option img { width:100%; height:100%; object-fit:contain; }
+    .sticker-option:hover { background:rgba(0,0,0,.08); }
+    /* Paleta de adesivos: controles de tamanho + grade 5 x 5 */
+    .sticker-palette { max-width:min(300px, calc(100vw - 32px)); max-height:min(72vh, 520px); overflow:auto; }
+    .sticker-palette.active { display:block; }
+    .sticker-size-controls { display:flex; align-items:center; gap:6px; margin-bottom:8px; padding-bottom:8px; border-bottom:1px solid rgba(0,0,0,.12); }
+    .sticker-size-controls span { font:600 12px sans-serif; color:var(--text-main); margin-right:2px; }
+    .sticker-size-btn { width:30px; height:28px; border:1px solid rgba(0,0,0,.18); border-radius:5px; background:rgba(255,255,255,.6); cursor:pointer; color:var(--text-main); font-weight:700; }
+    .sticker-size-btn.active { background:var(--btn-bg); color:#fff; border-color:var(--btn-bg); }
+    .sticker-grid { display:grid; grid-template-columns:repeat(5, 42px); gap:5px; }
+    .sticker-grid .sticker-option { width:42px; height:42px; }
+    @media (max-width:520px) { .sticker-palette { left:auto; right:0; } .sticker-grid { grid-template-columns:repeat(5, 38px); gap:4px; } .sticker-grid .sticker-option { width:38px; height:38px; } }
+    .export-note { font-size:.78rem; opacity:.75; padding:4px 7px; }
+
+    /* ÁREA DE TEXTO */
+    .opened-book-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.4rem;
+      color: var(--text-main);
+      border: none;
+      background: transparent;
+      outline: none;
+      margin-bottom: 5px;
+      width: 100%;
+      font-weight: bold;
+    }
+
+    .opened-book-content {
+      width: 100%;
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      overflow-y: auto;
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      line-height: 34px;
+      color: var(--text-main);
+      padding: 0;
+      background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 31px, var(--book-lines) 31px, var(--book-lines) 32px, transparent 32px, transparent 34px);
+      background-size: 100% var(--notebook-lines-height, 34px);
+      background-repeat: no-repeat;
+      background-attachment: local;
+      padding-top: 0;
+      overflow-wrap: anywhere;
+      position: relative;
+    }
+    .opened-book-content > * { margin-block: 0 !important; line-height: 34px !important; }
+    .opened-book-content p, .opened-book-content div { min-height: 34px; }
+    .opened-book-content br { line-height: 34px; }
+
+    /* Efeito de Marca-Texto Destaque */
+    .custom-highlight {
+      display: inline;
+      padding: 2px 4px;
+      border-radius: 3px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    /* POST-IT NA SEQUÊNCIA DO TEXTO */
+    .inline-postit {
+      display: inline-block;
+      min-width: 180px;
+      max-width: 260px;
+      min-height: 80px;
+      padding: 10px;
+      margin: 5px 8px;
+      box-shadow: 2px 4px 8px rgba(0,0,0,0.15);
+      border-radius: 2px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      color: #333;
+      transform: rotate(-1deg);
+      vertical-align: middle;
+      border: none;
+      outline: none;
+    }
+
+    /* MODO LEITURA VS EDIÇÃO */
+    .opened-book.readonly .opened-book-title,
+    .opened-book.readonly .opened-book-content,
+    .opened-book.readonly .inline-postit,
+    .opened-book.readonly .movable-sticker {
+      pointer-events: none;
+      user-select: text;
+    }
+    .opened-book.readonly .editor-toolbar { display: none; }
+
+    /* CONTROLES DE PÁGINAS E BOTÃO MAIS (+) */
+    .book-footer-bar {
+      position: absolute;
+      bottom: 12px;
+      right: 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 5;
+    }
+
+    .page-indicator {
+      font-size: 0.9rem;
+      font-family: 'Playfair Display', serif;
+      opacity: 0.8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .page-nav-btn {
+      background: transparent;
+      border: 1px solid var(--text-main);
+      color: var(--text-main);
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+    .page-nav-btn:hover { background: var(--text-main); color: var(--book-bg); }
+
+    /* BOTÃO FAB (+) E MENU OCULTO */
+    .fab-container {
+      position: relative;
+    }
+
+    .fab-btn {
+      background: var(--btn-bg);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .fab-btn:hover { transform: scale(1.1); }
+
+    .fab-menu {
+      display: none;
+      position: absolute;
+      bottom: 45px;
+      right: 0;
+      background: var(--book-bg);
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 8px;
+      padding: 6px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      flex-direction: column;
+      gap: 5px;
+      min-width: 130px;
+      z-index: 30;
+    }
+    .fab-menu.active { display: flex; }
+
+    .fab-menu-btn {
+      background: transparent;
+      border: none;
+      padding: 6px 12px;
+      text-align: left;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .fab-menu-btn:hover { background: rgba(0,0,0,0.08); }
+    .fab-menu-btn.delete { color: #a85858; }
+    .fab-menu-btn.delete:hover { background: #a85858; color: white; }
+
+    /* MODAL CONFIGURAÇÕES */
+    .settings-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--modal-bg);
+      backdrop-filter: blur(5px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1100;
+    }
+    .settings-modal.active { display: flex; }
+
+    .settings-content {
+      background: var(--book-bg);
+      padding: 35px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .settings-content h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.2rem;
+      color: var(--header-title);
+      margin-bottom: 20px;
+    }
+
+    .settings-section { margin-bottom: 25px; }
+    .settings-section h3 { font-size: 1.1rem; margin-bottom: 10px; }
+
+    .theme-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .theme-btn {
+      padding: 9px;
+      border: 1px solid var(--text-main);
+      background: transparent;
+      color: var(--text-main);
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+      transition: 0.2s;
+    }
+    .theme-btn:hover { background: var(--btn-bg); color: #fff; }
+
+    .trash-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .trash-list {
+      max-height: 140px;
+      overflow-y: auto;
+      border: 1px dashed var(--text-main);
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    .trash-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      font-size: 0.95rem;
+    }
+
+    .trash-actions {
+      display: flex;
+      gap: 5px;
+    }
+
+    .btn-small {
+      padding: 2px 6px;
+      font-size: 0.75rem;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 1px solid rgba(0,0,0,0.2);
+      background: transparent;
+      color: var(--text-main);
+    }
+    .btn-small:hover { background: var(--btn-bg); color: #fff; }
+    .btn-small.danger:hover { background: #a85858; color: #fff; }
+  </style>
+</head>
+<body data-theme="default">
+
+  <!-- Botão de Configurações Discreto -->
+  <button class="settings-icon-btn" onclick="openSettings()" title="Configurações">⚙️</button>
+
+  <header>
+    <h1>Meu Scrapbook</h1>
+    <p class="subtitle">Seu diário de estudos vintage & fofo</p>
+    <button class="btn-create" onclick="createNewBook()">+ Criar Novo Livro</button>
+  </header>
+
+  <!-- Área principal: estante à esquerda e notas rápidas à direita -->
+  <div class="dashboard-layout">
+    <main class="shelf-container" id="shelf"></main>
+    <aside class="dashboard-notes" aria-label="Lembrete visual e calendário">
+      <h2>Meu cantinho</h2>
+      <section class="mini-calendar" aria-label="Calendário">
+        <div class="mini-calendar-head">
+          <button class="calendar-nav" type="button" id="calendarPrev" aria-label="Mês anterior">‹</button>
+          <h3 id="calendarMonthTitle">Calendário</h3>
+          <button class="calendar-nav" type="button" id="calendarNext" aria-label="Próximo mês">›</button>
+        </div>
+        <div class="calendar-grid" id="calendarGrid"></div>
+        <p class="calendar-selected" id="calendarSelectedDate">Escolha uma data</p>
+      </section>
+      <section class="visual-reminder-section">
+        <h3>🖼️ Lembrete visual</h3>
+        <p class="panel-hint">Adicione uma imagem para deixar à vista.</p>
+        <label class="image-upload-btn" for="visualReminderUpload">＋ Adicionar imagem</label>
+        <input type="file" id="visualReminderUpload" accept="image/*" hidden>
+        <div id="visualReminderBox" class="visual-reminder-box"><span>Sua imagem aparecerá aqui</span></div>
+        <button type="button" class="clear-visual-btn" id="clearVisualReminder">Remover imagem</button>
+      </section>
+    </aside>
+  </div>
+
+  <!-- Modal do Livro Aberto -->
+  <div class="modal-overlay" id="bookModal">
+    <div class="opened-book readonly" id="openedBookContainer">
+      <div class="washi-tape" id="washiTapeDeco"></div>
+      <div class="stamp-badge" id="stampBadge">✓ ESTUDADO</div>
+      <button class="close-btn" onclick="closeBook()">✕</button>
+      
+      <!-- Barra de ferramentas do editor -->
+      <div class="editor-toolbar">
+        <!-- Botão Grifar + Paleta -->
+        <button class="tool-btn" onclick="togglePalette('highlighterPalette')">🖍️ Grifar</button>
+        <div class="highlighter-palette" id="highlighterPalette">
+          <div class="color-dot" style="background: #a3e635;" title="Verde" onclick="applyHighlight('#a3e635')"></div>
+          <div class="color-dot" style="background: #fde047;" title="Amarelo" onclick="applyHighlight('#fde047')"></div>
+          <div class="color-dot" style="background: #fdba74;" title="Laranja" onclick="applyHighlight('#fdba74')"></div>
+          <div class="color-dot" style="background: #38bdf8;" title="Azul" onclick="applyHighlight('#38bdf8')"></div>
+          <div class="color-dot" style="background: #f472b6;" title="Rosa" onclick="applyHighlight('#f472b6')"></div>
+        </div>
+
+        <!-- Botão Adesivos -->
+        <button class="tool-btn" onclick="togglePalette('stickerPalette')">🧸 Adesivos</button>
+        <div class="sticker-palette" id="stickerPalette" aria-label="Escolha um adesivo"></div>
+
+        <!-- Botão Carimbo -->
+        <button class="tool-btn" onclick="togglePalette('stampPalette')">💮 Carimbo</button>
+        <div class="stamp-palette" id="stampPalette">
+          <div class="stamp-option" onclick="applyStamp('✓ ESTUDADO')">✓ ESTUDADO</div>
+          <div class="stamp-option" onclick="applyStamp('⏳ PENDENTE')">⏳ PENDENTE</div>
+          <div class="stamp-option" onclick="applyStamp('🔍 REVISAR')">🔍 REVISAR</div>
+          <div class="stamp-option" onclick="applyStamp(null)" style="color:#a85858;">(Remover)</div>
+        </div>
+
+      </div>
+
+      <input type="text" id="modalTitle" class="opened-book-title" placeholder="Título do Estudo...">
+      <div id="modalContent" class="opened-book-content" contenteditable="true" placeholder="Escreva suas anotações de aula aqui..."></div>
+
+      <!-- Rodapé com Navegação de Páginas e Botão (+) Discreto -->
+      <div class="book-footer-bar">
+        <div class="page-indicator">
+          <button class="page-nav-btn" onclick="changePage(-1)">‹</button>
+          <span id="pageNumberText">Pág. 1 de 1</span>
+          <button class="page-nav-btn" onclick="changePage(1)">›</button>
+        </div>
+
+        <div class="fab-container">
+          <button class="fab-btn" onclick="toggleFabMenu()" title="Opções">+</button>
+          <div class="fab-menu" id="fabMenu">
+            <button class="fab-menu-btn" id="editToggleBtn" onclick="toggleEditMode()">✏️ Editar</button>
+            <button class="fab-menu-btn" onclick="addNewPage()">📄 Nova Página</button>
+            <button class="fab-menu-btn" onclick="saveAndCloseBook()">💾 Salvar</button>
+            <button class="fab-menu-btn" onclick="exportBookPDF()">📑 Exportar PDF</button>
+            <button class="fab-menu-btn delete" onclick="deleteCurrentBook()">🗑️ Apagar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Configurações, Temas e Lixeira -->
+  <div class="settings-modal" id="settingsModal">
+    <div class="settings-content">
+      <button class="close-btn" onclick="closeSettings()">✕</button>
+      <h2>Configurações</h2>
+      
+      <div class="settings-section">
+        <h3>Escolher Tema / Época</h3>
+        <div class="theme-options">
+          <button class="theme-btn" onclick="setTheme('default')">📖 Vintage Clássico</button>
+          <button class="theme-btn" onclick="setTheme('vintage-rose')">🌹 Rosa Romântico</button>
+          <button class="theme-btn" onclick="setTheme('antique-paper')">📜 Pergaminho Antigo</button>
+          <button class="theme-btn" onclick="setTheme('midnight-velvet')">🌙 Noite Acolhedora</button>
+          <button class="theme-btn" onclick="setTheme('dark')">✨ Modo Escuro</button>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <div class="trash-header-row">
+          <h3>Lixeira (Livros Apagados)</h3>
+          <button class="btn-small danger" onclick="clearAllTrash()">Esvaziar Lixeira</button>
+        </div>
+        <div class="trash-list" id="trashList">
+          <p style="font-size: 0.9rem; opacity: 0.7; text-align: center;">A lixeira está vazia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const coverStyles = [
+      'background: linear-gradient(135deg, #7c4d5d, #4a2e38);', 
+      'background: linear-gradient(135deg, #4f6f52, #2c3e2f);', 
+      'background: linear-gradient(135deg, #8c6d46, #5c4327);', 
+      'background: linear-gradient(135deg, #5b507a, #352f4a);', 
+      'background: linear-gradient(135deg, #9e5a63, #6e3a41);',
+      'background: linear-gradient(135deg, #3d5a80, #1d3557);'
+    ];
+
+    const tapeStyles = [
+      'rgba(216, 178, 185, 0.85)', 
+      'rgba(163, 177, 138, 0.85)', 
+      'rgba(212, 163, 115, 0.85)', 
+      'rgba(154, 140, 152, 0.85)',
+      'rgba(230, 180, 150, 0.85)',
+      'rgba(180, 200, 220, 0.85)'
+    ];
+
+    const postItColors = ['#fef08a', '#bbf7d0', '#fed7aa', '#bae6fd', '#fbcfe8'];
+
+    let books = JSON.parse(localStorage.getItem('meu_scrapbook_books')) || [];
+    if (!Array.isArray(books)) books = [];
+    const demoBooks = [
+      ['Botânica & Flores', '<div>As flores lembram que cada fase tem seu tempo.</div><div>Observe as folhas, as cores e os pequenos detalhes.</div>'],
+      ['Diário de Estudos', '<div>Uma página de cada vez, uma ideia de cada vez.</div><div>Revisar um pouco todos os dias ajuda a aprender.</div>'],
+      ['Cartas & Memórias', '<div>Guarde aqui frases, ideias e lembranças especiais.</div>'],
+      ['Café com Leituras', '<div>Leitura do dia: anotar o que chamou atenção.</div><div>Minha reflexão:</div>'],
+      ['Céu Estrelado', '<div>Ideias para explorar mais tarde:</div><div>• observar • pesquisar • registrar</div>'],
+      ['Meu Herbário', '<div>Nome da planta:</div><div>Características:</div><div>Data da observação:</div>']
+    ];
+    // Mantém os livros já existentes e completa a estante com seis exemplos na primeira execução.
+    if (books.length < 6) {
+      for (let i = books.length; i < 6; i++) {
+        const item = demoBooks[i];
+        books.push({ id: Date.now() + i, title: item[0], pages: [{ html: item[1], stickers: [] }], stampText: null, style: coverStyles[i % coverStyles.length], tapeColor: tapeStyles[i % tapeStyles.length] });
+      }
+      localStorage.setItem('meu_scrapbook_books', JSON.stringify(books));
+    }
+    let trash = JSON.parse(localStorage.getItem('meu_scrapbook_trash')) || [];
+    let currentBookId = null;
+    let currentPageIndex = 0;
+    let isEditing = false;
+    let savedSelectionRange = null;
+    let activeStickerDrag = null;
+
+    // Figuras vetoriais originais (SVG), sem emojis ou dependência de imagens externas.
+    const stickerArt = {
+      flower: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><g stroke="#b75c70" stroke-width="2"><ellipse cx="60" cy="32" rx="13" ry="24" fill="#f4a6b8"/><ellipse cx="60" cy="88" rx="13" ry="24" fill="#f4a6b8"/><ellipse cx="32" cy="60" rx="24" ry="13" fill="#f4a6b8"/><ellipse cx="88" cy="60" rx="24" ry="13" fill="#f4a6b8"/><ellipse cx="40" cy="40" rx="13" ry="22" transform="rotate(-45 40 40)" fill="#ffd0d8"/><ellipse cx="80" cy="40" rx="13" ry="22" transform="rotate(45 80 40)" fill="#ffd0d8"/><ellipse cx="40" cy="80" rx="13" ry="22" transform="rotate(45 40 80)" fill="#ffd0d8"/><ellipse cx="80" cy="80" rx="13" ry="22" transform="rotate(-45 80 80)" fill="#ffd0d8"/></g><circle cx="60" cy="60" r="15" fill="#e9b94f" stroke="#a97732" stroke-width="2"/><circle cx="55" cy="55" r="3" fill="#fff1b0"/></svg>`,
+      butterfly: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M58 56C29 6 2 26 19 56C-1 82 28 103 58 67M62 56C91 6 118 26 101 56C121 82 92 103 62 67" fill="#b9b2e4" stroke="#655c98" stroke-width="3"/><path d="M60 39Q48 16 43 22M60 39Q72 16 77 22" fill="none" stroke="#655c98" stroke-width="2"/><ellipse cx="60" cy="61" rx="5" ry="22" fill="#6d5b87"/><circle cx="30" cy="51" r="7" fill="#f9d8e5"/><circle cx="90" cy="51" r="7" fill="#f9d8e5"/></svg>`,
+      leaf: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M20 100Q18 24 98 18Q100 92 20 100Z" fill="#a8c59a" stroke="#557d57" stroke-width="3"/><path d="M20 100Q52 62 91 28M43 77L39 49M59 62L81 62" fill="none" stroke="#557d57" stroke-width="3"/><path d="M24 91Q35 48 80 31" fill="none" stroke="#dce9ce" stroke-width="3"/></svg>`,
+      envelope: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect x="15" y="30" width="90" height="65" rx="4" fill="#fff0e9" stroke="#b86b72" stroke-width="3"/><path d="M17 34L60 67L103 34M17 92L47 62M103 92L73 62" fill="none" stroke="#d18b91" stroke-width="3"/><path d="M60 62C43 48 42 39 51 38Q59 37 60 46Q64 35 73 39Q83 48 60 62Z" fill="#c65e72"/></svg>`,
+      coffee: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M22 42H86V82Q84 98 68 98H41Q24 95 22 82Z" fill="#f4d6ad" stroke="#8d5b43" stroke-width="3"/><path d="M86 51H96Q110 53 103 72Q99 82 86 79" fill="none" stroke="#8d5b43" stroke-width="5"/><ellipse cx="54" cy="42" rx="32" ry="8" fill="#6d4534" stroke="#8d5b43" stroke-width="3"/><path d="M42 29Q32 18 42 10M58 29Q48 18 58 10M73 29Q63 18 73 10" fill="none" stroke="#b9a39a" stroke-width="3" stroke-linecap="round"/><path d="M32 70Q54 80 76 70" fill="none" stroke="#d09c7d" stroke-width="3"/></svg>`,
+      book: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M14 28Q37 20 58 34V96Q36 82 14 91Z" fill="#e7a7ad" stroke="#985b63" stroke-width="3"/><path d="M106 28Q83 20 62 34V96Q84 82 106 91Z" fill="#f6d8c4" stroke="#985b63" stroke-width="3"/><path d="M60 34V96" stroke="#985b63" stroke-width="3"/><path d="M23 40Q38 36 49 44M23 51Q38 47 49 55M71 44Q84 36 97 40M71 55Q84 47 97 51" stroke="#fff4e8" stroke-width="3" fill="none"/></svg>`,
+      star: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M60 8L73 43L110 45L82 69L91 106L60 86L29 106L38 69L10 45L47 43Z" fill="#f5ce67" stroke="#b88936" stroke-width="3" stroke-linejoin="round"/><path d="M60 22L66 45L88 47L71 61L76 83L60 71L44 83L49 61L32 47L54 45Z" fill="#ffe9a2"/></svg>`,
+      mushroom: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M60 14C31 14 12 38 13 59H107C108 38 89 14 60 14Z" fill="#d97979" stroke="#934d55" stroke-width="3"/><circle cx="39" cy="39" r="7" fill="#ffe9d7"/><circle cx="69" cy="30" r="6" fill="#ffe9d7"/><circle cx="83" cy="48" r="5" fill="#ffe9d7"/><path d="M46 59L40 94Q60 105 80 94L74 59Z" fill="#f7e4bd" stroke="#b89a72" stroke-width="3"/><path d="M49 76Q60 82 71 76" fill="none" stroke="#d4b68d" stroke-width="3"/></svg>`,
+      bow: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M55 56Q22 14 13 36Q7 63 54 68Q18 92 31 103Q47 108 60 72Q74 108 90 103Q103 92 66 68Q113 63 107 36Q98 14 65 56Z" fill="#e99caf" stroke="#a95770" stroke-width="3"/><ellipse cx="60" cy="64" rx="11" ry="14" fill="#f7c6d0" stroke="#a95770" stroke-width="3"/></svg>`,
+      moon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M83 15C48 20 34 53 48 81Q62 108 91 94Q70 104 48 94Q12 77 22 43Q33 9 65 10Z" fill="#f2d58a" stroke="#b08b43" stroke-width="3"/><path d="M88 27L93 39L106 40L96 49L99 62L88 55L77 62L80 49L70 40L83 39Z" fill="#d6b4ce" stroke="#96789b" stroke-width="2"/></svg>`,
+      strawberry: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M60 35C28 15 12 43 27 69L60 108L93 69C108 43 92 15 60 35Z" fill="#ef8d9a" stroke="#b95d70" stroke-width="3"/><path d="M60 37Q43 12 29 25Q43 28 48 40M60 37Q72 8 91 24Q76 29 68 41" fill="#9bbd83" stroke="#658c68" stroke-width="3"/><g fill="#ffe9a4"><ellipse cx="42" cy="56" rx="2.5" ry="4"/><ellipse cx="67" cy="53" rx="2.5" ry="4"/><ellipse cx="52" cy="72" rx="2.5" ry="4"/><ellipse cx="77" cy="70" rx="2.5" ry="4"/></g></svg>`,
+      heart: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M60 101S10 69 15 39C19 12 49 13 60 36C75 9 105 16 106 40C108 69 60 101 60 101Z" fill="#ef9aaa" stroke="#b85d73" stroke-width="4"/><path d="M33 35Q39 25 49 34" stroke="#fff0f2" stroke-width="5" fill="none" stroke-linecap="round"/></svg>`,
+      cherry: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M60 58Q46 19 29 18M60 58Q75 12 93 20" fill="none" stroke="#658b59" stroke-width="4"/><path d="M61 45Q35 22 23 38Q39 49 61 45M65 40Q81 12 101 26Q91 43 65 40" fill="#a9c98d" stroke="#658b59" stroke-width="3"/><circle cx="39" cy="74" r="24" fill="#d96f7b" stroke="#a34f5c" stroke-width="3"/><circle cx="83" cy="75" r="24" fill="#e7848d" stroke="#a34f5c" stroke-width="3"/><ellipse cx="31" cy="65" rx="5" ry="8" fill="#ffd9d6"/><ellipse cx="75" cy="66" rx="5" ry="8" fill="#ffd9d6"/></svg>`,
+      cloud: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M26 83Q8 80 12 61Q15 44 35 46Q43 20 67 29Q84 34 85 51Q108 47 110 68Q112 85 92 87Z" fill="#d8eafa" stroke="#86a9c5" stroke-width="4"/><circle cx="48" cy="64" r="2.5" fill="#55758c"/><circle cx="72" cy="64" r="2.5" fill="#55758c"/><path d="M51 74Q60 82 69 74" stroke="#55758c" stroke-width="3" fill="none" stroke-linecap="round"/></svg>`,
+      planet: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><circle cx="59" cy="58" r="31" fill="#c6b5e8" stroke="#8a78b1" stroke-width="4"/><ellipse cx="59" cy="61" rx="50" ry="15" fill="none" stroke="#e7b6c8" stroke-width="8" transform="rotate(-20 59 61)"/><circle cx="48" cy="47" r="6" fill="#e8dcf7"/><path d="M89 18L94 29L106 30L97 38L99 50L89 44L79 50L81 38L72 30L84 29Z" fill="#f5d57f"/></svg>`,
+      cupcake: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M28 58Q12 43 28 30Q37 23 47 31Q56 8 73 22Q88 18 93 35Q110 43 94 59Z" fill="#f5c3d0" stroke="#b86d85" stroke-width="3"/><path d="M28 59H94L84 101H39Z" fill="#e8b5a4" stroke="#b87e72" stroke-width="3"/><path d="M40 70H87M43 83H84" stroke="#fff0df" stroke-width="4"/><circle cx="60" cy="25" r="6" fill="#d96f7b"/></svg>`,
+      candle: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect x="35" y="42" width="50" height="62" rx="5" fill="#f7d6a4" stroke="#b58b59" stroke-width="3"/><path d="M60 42V31" stroke="#80624b" stroke-width="3"/><path d="M60 28C42 17 57 5 63 11Q78 22 60 28Z" fill="#f2a65a" stroke="#c87d42" stroke-width="2"/><path d="M43 60Q60 68 77 60M43 79Q60 87 77 79" stroke="#e5a8b4" stroke-width="4" fill="none"/></svg>`,
+      pencil: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><g transform="rotate(-35 60 60)"><rect x="43" y="14" width="34" height="78" rx="5" fill="#f3d16f" stroke="#aa8a42" stroke-width="3"/><path d="M43 20H77M43 29H77" stroke="#e79c9c" stroke-width="4"/><path d="M43 92L60 112L77 92Z" fill="#e9c49b" stroke="#aa8a42" stroke-width="3"/><path d="M55 106L60 112L65 106Z" fill="#55453f"/></g></svg>`,
+      perfume: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect x="45" y="18" width="30" height="18" rx="3" fill="#d7b5a8" stroke="#9b756d" stroke-width="3"/><rect x="34" y="37" width="52" height="66" rx="9" fill="#e9c9d6" stroke="#a7758b" stroke-width="3"/><rect x="42" y="56" width="36" height="25" rx="3" fill="#fff0e8" stroke="#c89ba8" stroke-width="2"/><path d="M60 59L64 67L73 68L66 74L68 80L60 76L52 80L54 72L48 68L56 67Z" fill="#d5a75d"/></svg>`,
+      butterfly2: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M58 59C26 8 5 28 17 55Q28 74 58 65C27 70 26 107 48 99Q62 90 61 65M62 59C94 8 115 28 103 55Q92 74 62 65C93 70 94 107 72 99Q58 90 59 65" fill="#d8b5e7" stroke="#9274a8" stroke-width="3"/><path d="M60 44V87" stroke="#765c87" stroke-width="5" stroke-linecap="round"/><path d="M59 45Q48 27 40 32M61 45Q72 27 80 32" stroke="#765c87" stroke-width="3" fill="none"/></svg>`,
+      flower2: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><g fill="#f5b8ca" stroke="#b86e88" stroke-width="3"><ellipse cx="60" cy="28" rx="15" ry="23"/><ellipse cx="60" cy="92" rx="15" ry="23"/><ellipse cx="28" cy="60" rx="23" ry="15"/><ellipse cx="92" cy="60" rx="23" ry="15"/><ellipse cx="38" cy="38" rx="15" ry="23" transform="rotate(-45 38 38)"/><ellipse cx="82" cy="38" rx="15" ry="23" transform="rotate(45 82 38)"/></g><circle cx="60" cy="60" r="17" fill="#f5d77e" stroke="#b38c42" stroke-width="3"/></svg>`,
+      snail: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M17 84Q22 65 42 72L88 72Q105 74 105 91H17Z" fill="#c5dcae" stroke="#7b9b6b" stroke-width="3"/><circle cx="54" cy="58" r="27" fill="#e5b9a0" stroke="#a87e69" stroke-width="3"/><path d="M54 38Q75 44 69 61Q65 77 49 69Q37 62 47 51Q55 45 60 54" fill="none" stroke="#b37f6c" stroke-width="4"/><path d="M90 73V54M100 74V54" stroke="#7b9b6b" stroke-width="4"/><circle cx="90" cy="51" r="5" fill="#fff4e9" stroke="#7b9b6b" stroke-width="2"/><circle cx="100" cy="51" r="5" fill="#fff4e9" stroke="#7b9b6b" stroke-width="2"/></svg>`,
+      teacup: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M20 47H84V77Q82 96 60 96H43Q22 93 20 77Z" fill="#f4d7e0" stroke="#ad7487" stroke-width="3"/><path d="M84 54H96Q108 55 103 72Q99 81 84 78" fill="none" stroke="#ad7487" stroke-width="5"/><ellipse cx="52" cy="47" rx="32" ry="7" fill="#8c6557"/><path d="M39 36Q30 24 40 14M56 36Q47 24 57 14M71 36Q62 24 72 14" fill="none" stroke="#b6a19a" stroke-width="3" stroke-linecap="round"/><path d="M29 69Q53 79 76 69" fill="none" stroke="#d8a7b9" stroke-width="3"/></svg>`,
+      flowerpot: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path d="M32 63H88L80 103H40Z" fill="#e7b49e" stroke="#a97967" stroke-width="3"/><path d="M60 65V25M60 49Q27 47 29 25Q52 24 60 49M60 42Q87 39 91 17Q68 18 60 42" fill="#9fbd8b" stroke="#67895f" stroke-width="3"/><circle cx="60" cy="20" r="9" fill="#f3c1d0" stroke="#b86e88" stroke-width="2"/></svg>`
+    };
+    const stickerLabels = {flower:'Flor', butterfly:'Borboleta', leaf:'Folhagem', envelope:'Cartinha', coffee:'Café', book:'Livros', star:'Estrela', mushroom:'Cogumelo', bow:'Laço', moon:'Lua e estrela', strawberry:'Morango', heart:'Coração', cherry:'Cerejas', cloud:'Nuvem', planet:'Planeta', cupcake:'Cupcake', candle:'Velinha', pencil:'Lápis', perfume:'Perfume', butterfly2:'Borboleta lilás', flower2:'Flor rosa', snail:'Caracol', teacup:'Xícara de chá', flowerpot:'Vasinho'};
+    function stickerData(type) { return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(stickerArt[type] || stickerArt.flower); }
+    let selectedStickerSize = 1;
+    const stickerSizePixels = {1:68, 2:98, 3:132};
+    function chooseStickerSize(size) {
+      selectedStickerSize = Number(size) || 1;
+      document.querySelectorAll('.sticker-size-btn').forEach(btn => btn.classList.toggle('active', Number(btn.dataset.size) === selectedStickerSize));
+    }
+    function renderStickerPalette() {
+      const palette = document.getElementById('stickerPalette');
+      if (!palette) return;
+      const items = Object.keys(stickerArt).map(type => `<button class="sticker-option" type="button" title="${stickerLabels[type]}" aria-label="Adicionar ${stickerLabels[type]}" onclick="addSticker('${type}')"><img alt="${stickerLabels[type]}" src="${stickerData(type)}"></button>`).join('');
+      palette.innerHTML = `<div class="sticker-size-controls"><span>Tamanho:</span><button class="sticker-size-btn active" data-size="1" type="button" aria-label="Tamanho pequeno" onclick="chooseStickerSize(1)">1</button><button class="sticker-size-btn" data-size="2" type="button" aria-label="Tamanho médio" onclick="chooseStickerSize(2)">2</button><button class="sticker-size-btn" data-size="3" type="button" aria-label="Tamanho grande" onclick="chooseStickerSize(3)">3</button></div><div class="sticker-grid">${items}</div>`;
+    }
+
+
+    // Calendário compacto da página inicial, com navegação entre meses e seleção de data.
+    let calendarViewDate = new Date();
+    let calendarSelectedDate = new Date();
+    const calendarMonthNames = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+    function renderMiniCalendar() {
+      const title = document.getElementById('calendarMonthTitle');
+      const grid = document.getElementById('calendarGrid');
+      if (!title || !grid) return;
+      const year = calendarViewDate.getFullYear();
+      const month = calendarViewDate.getMonth();
+      title.textContent = `${calendarMonthNames[month][0].toUpperCase()}${calendarMonthNames[month].slice(1)} de ${year}`;
+      const weekdays = ['D','S','T','Q','Q','S','S'];
+      grid.innerHTML = weekdays.map(day => `<span class="calendar-weekday">${day}</span>`).join('');
+      const firstWeekday = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      for (let i = 0; i < firstWeekday; i++) grid.insertAdjacentHTML('beforeend', '<span class="calendar-day empty"></span>');
+      const today = new Date();
+      for (let day = 1; day <= daysInMonth; day++) {
+        const isToday = day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
+        const isSelected = day === calendarSelectedDate.getDate() && month === calendarSelectedDate.getMonth() && year === calendarSelectedDate.getFullYear();
+        const classes = ['calendar-day', isToday ? 'today' : '', isSelected ? 'selected' : ''].filter(Boolean).join(' ');
+        grid.insertAdjacentHTML('beforeend', `<button type="button" class="${classes}" data-day="${day}" aria-label="${day} de ${calendarMonthNames[month]} de ${year}">${day}</button>`);
+      }
+      grid.querySelectorAll('button[data-day]').forEach(button => button.addEventListener('click', () => {
+        calendarSelectedDate = new Date(year, month, Number(button.dataset.day));
+        renderMiniCalendar();
+      }));
+      const selectedLabel = document.getElementById('calendarSelectedDate');
+      if (selectedLabel) selectedLabel.textContent = `Data selecionada: ${calendarSelectedDate.getDate()} de ${calendarMonthNames[calendarSelectedDate.getMonth()]} de ${calendarSelectedDate.getFullYear()}`;
+    }
+    document.getElementById('calendarPrev')?.addEventListener('click', () => { calendarViewDate = new Date(calendarViewDate.getFullYear(), calendarViewDate.getMonth() - 1, 1); renderMiniCalendar(); });
+    document.getElementById('calendarNext')?.addEventListener('click', () => { calendarViewDate = new Date(calendarViewDate.getFullYear(), calendarViewDate.getMonth() + 1, 1); renderMiniCalendar(); });
+
+    function initVisualReminder() {
+      const upload = document.getElementById('visualReminderUpload');
+      const box = document.getElementById('visualReminderBox');
+      const saved = localStorage.getItem('meu_scrapbook_visual_reminder');
+      if (saved && box) box.innerHTML = `<img alt="Lembrete visual" src="${saved}">`;
+      upload?.addEventListener('change', () => {
+        const file = upload.files && upload.files[0]; if (!file) return;
+        if (!file.type.startsWith('image/')) { alert('Escolha um arquivo de imagem.'); return; }
+        const reader = new FileReader(); reader.onload = () => {
+          const data = reader.result;
+          try { localStorage.setItem('meu_scrapbook_visual_reminder', data); box.innerHTML = `<img alt="Lembrete visual" src="${data}">`; }
+          catch (_) { alert('Esta imagem é muito grande para ser guardada. Escolha uma imagem menor.'); }
+        }; reader.readAsDataURL(file);
+      });
+      document.getElementById('clearVisualReminder')?.addEventListener('click', () => { localStorage.removeItem('meu_scrapbook_visual_reminder'); box.innerHTML = '<span>Sua imagem aparecerá aqui</span>'; upload.value=''; });
+    }
+
+    const savedTheme = localStorage.getItem('meu_scrapbook_theme') || 'default';
+    setTheme(savedTheme, false);
+
+    function renderBooks() {
+      const shelf = document.getElementById('shelf');
+      shelf.innerHTML = '';
+
+      if (books.length === 0) {
+        shelf.innerHTML = '<p style="grid-column: 1/-1; text-align: center; opacity: 0.7; font-style: italic; margin-top: 20px;">Nenhum livro criado ainda. Clique em "+ Criar Novo Livro" acima!</p>';
+        return;
+      }
+
+      books.forEach(book => {
+        const bookDiv = document.createElement('div');
+        bookDiv.className = 'book-item';
+        bookDiv.style.cssText = book.style;
+        bookDiv.onclick = () => openBook(book.id);
+
+        bookDiv.innerHTML = `
+          <div class="book-cover-frame">
+            <div class="book-ornament">❦</div>
+            <span class="book-title">${book.title || 'Novo Estudo'}</span>
+          </div>
+        `;
+        shelf.appendChild(bookDiv);
+      });
+    }
+
+    function createNewBook() {
+      const randomStyle = coverStyles[Math.floor(Math.random() * coverStyles.length)];
+      const randomTape = tapeStyles[Math.floor(Math.random() * tapeStyles.length)];
+      
+      const newBook = {
+        id: Date.now(),
+        title: 'Novo Estudo',
+        pages: [{ html: '', stickers: [] }],
+        stampText: null,
+        style: randomStyle,
+        tapeColor: randomTape
+      };
+
+      books.push(newBook);
+      saveToStorage();
+      renderBooks();
+      openBook(newBook.id, true);
+    }
+
+    function openBook(id, editMode = false) {
+      currentBookId = id;
+      currentPageIndex = 0;
+      const book = books.find(b => b.id === id);
+      if (!book) return;
+
+      if (!book.pages || book.pages.length === 0) {
+        book.pages = [{ html: '', stickers: [] }];
+      }
+
+      document.getElementById('modalTitle').value = book.title || 'Novo Estudo';
+
+      // Sorteia uma nova cor de fita washi a CADA ENTRADA no livro para efeito natural
+      const randomTapeColor = tapeStyles[Math.floor(Math.random() * tapeStyles.length)];
+      book.tapeColor = randomTapeColor;
+      document.getElementById('washiTapeDeco').style.backgroundColor = randomTapeColor;
+
+      applyStampUI(book.stampText);
+      loadPageContent();
+
+      const container = document.getElementById('openedBookContainer');
+      const editBtn = document.getElementById('editToggleBtn');
+
+      if (editMode) {
+        isEditing = true;
+        container.classList.remove('readonly');
+        document.getElementById('modalContent').setAttribute('contenteditable', 'true');
+        editBtn.textContent = '🔒 Bloquear';
+      } else {
+        isEditing = false;
+        container.classList.add('readonly');
+        document.getElementById('modalContent').setAttribute('contenteditable', 'false');
+        editBtn.textContent = '✏️ Editar';
+      }
+
+      document.getElementById('bookModal').classList.add('active');
+    }
+
+    // Mantém a folha branca e mostra linhas horizontais apenas até onde há conteúdo.
+    function updateNotebookLines() {
+      const content = document.getElementById('modalContent');
+      if (!content) return;
+      const lineHeight = 34;
+      let contentHeight = lineHeight;
+      try {
+        const range = document.createRange();
+        range.selectNodeContents(content);
+        const rect = range.getBoundingClientRect();
+        const hostRect = content.getBoundingClientRect();
+        if (rect && rect.height > 0) {
+          contentHeight = Math.max(lineHeight, Math.ceil((rect.bottom - hostRect.top + 3) / lineHeight) * lineHeight);
+        } else if ((content.innerText || '').trim()) {
+          const lineCount = Math.max(1, (content.innerText || '').split('\n').length);
+          contentHeight = lineCount * lineHeight;
+        }
+        range.detach?.();
+      } catch (_) { /* Mantém pelo menos a primeira linha se o navegador não suportar Range. */ }
+      content.style.setProperty('--notebook-lines-height', `${contentHeight}px`);
+    }
+
+    function loadPageContent() {
+      const book = books.find(b => b.id === currentBookId);
+      if (!book) return;
+
+      const pageData = book.pages[currentPageIndex] || { html: '', stickers: [] };
+      document.getElementById('modalContent').innerHTML = pageData.html || '';
+      requestAnimationFrame(updateNotebookLines);
+      document.getElementById('pageNumberText').textContent = `Pág. ${currentPageIndex + 1} de ${book.pages.length}`;
+      
+      renderStickersOnPage(pageData.stickers || []);
+    }
+
+    function saveCurrentPage() {
+      // Sincroniza as coordenadas reais dos elementos com os dados da página antes de salvar.
+      syncStickerPositions();
+      if (currentBookId !== null) {
+        const book = books.find(b => b.id === currentBookId);
+        if (book) {
+          if (!book.pages[currentPageIndex]) {
+            book.pages[currentPageIndex] = { html: '', stickers: [] };
+          }
+          book.pages[currentPageIndex].html = document.getElementById('modalContent').innerHTML;
+          if (!book.pages[currentPageIndex].stickers) book.pages[currentPageIndex].stickers = [];
+        }
+      }
+    }
+
+    function changePage(direction) {
+      saveCurrentPage();
+      const book = books.find(b => b.id === currentBookId);
+      if (!book) return;
+
+      const newIndex = currentPageIndex + direction;
+      if (newIndex >= 0 && newIndex < book.pages.length) {
+        currentPageIndex = newIndex;
+        loadPageContent();
+      }
+    }
+
+    function addNewPage() {
+      saveCurrentPage();
+      const book = books.find(b => b.id === currentBookId);
+      if (book) {
+        book.pages.push({ html: '', stickers: [] });
+        currentPageIndex = book.pages.length - 1;
+        loadPageContent();
+        closeFabMenu();
+      }
+    }
+
+    function toggleEditMode() {
+      isEditing = !isEditing;
+      const container = document.getElementById('openedBookContainer');
+      const editBtn = document.getElementById('editToggleBtn');
+      const contentArea = document.getElementById('modalContent');
+
+      if (isEditing) {
+        container.classList.remove('readonly');
+        contentArea.setAttribute('contenteditable', 'true');
+        editBtn.textContent = '🔒 Bloquear';
+      } else {
+        container.classList.add('readonly');
+        contentArea.setAttribute('contenteditable', 'false');
+        editBtn.textContent = '✏️ Editar';
+        saveAndCloseBook();
+      }
+      closeFabMenu();
+    }
+
+    function saveAndCloseBook() {
+      if (currentBookId) {
+        saveCurrentPage();
+        const book = books.find(b => b.id === currentBookId);
+        if (book) {
+          book.title = document.getElementById('modalTitle').value || 'Novo Estudo';
+          saveToStorage();
+        }
+      }
+      closeBook();
+    }
+
+    function closeBook() {
+      if (currentBookId !== null) { saveCurrentPage(); saveToStorage(); }
+      document.getElementById('bookModal').classList.remove('active');
+      closeFabMenu();
+      currentBookId = null;
+      renderBooks();
+    }
+
+    function deleteCurrentBook() {
+      if (confirm('Tem certeza de que deseja apagar este livro? Ele irá para a lixeira.')) {
+        const bookIndex = books.findIndex(b => b.id === currentBookId);
+        if (bookIndex !== -1) {
+          const deletedBook = books.splice(bookIndex, 1)[0];
+          trash.push(deletedBook);
+          saveToStorage();
+          closeBook();
+        }
+      }
+    }
+
+    /* MARCA-TEXTO: preserva a seleção mesmo ao clicar na paleta */
+    function rememberSelection() {
+      const content = document.getElementById('modalContent');
+      const selection = window.getSelection();
+      if (selection && selection.rangeCount && !selection.isCollapsed && content.contains(selection.anchorNode) && content.contains(selection.focusNode)) {
+        savedSelectionRange = selection.getRangeAt(0).cloneRange();
+      }
+    }
+    document.addEventListener('selectionchange', rememberSelection);
+    function applyHighlight(color) {
+      const content = document.getElementById('modalContent');
+      const selection = window.getSelection();
+      if (savedSelectionRange && content.contains(savedSelectionRange.commonAncestorContainer)) {
+        selection.removeAllRanges(); selection.addRange(savedSelectionRange);
+      }
+      if (!selection || !selection.rangeCount || selection.isCollapsed || !content.contains(selection.anchorNode) || !content.contains(selection.focusNode)) {
+        alert('Selecione um trecho do texto na página e escolha uma cor para grifar.'); return;
+      }
+      const range = selection.getRangeAt(0);
+      try {
+        const span = document.createElement('span');
+        span.className = 'custom-highlight'; span.style.backgroundColor = color;
+        span.appendChild(range.extractContents()); range.insertNode(span);
+      } catch (e) {
+        document.execCommand('hiliteColor', false, color);
+      }
+      selection.removeAllRanges(); savedSelectionRange = null;
+      content.focus(); closeAllPalettes(); saveCurrentPage();
+    }
+
+    function togglePalette(id) {
+      const palette = document.getElementById(id);
+      const active = palette.classList.contains('active');
+      closeAllPalettes();
+      if (!active) palette.classList.add('active');
+    }
+
+    function closeAllPalettes() {
+      document.querySelectorAll('.highlighter-palette, .stamp-palette, .sticker-palette').forEach(p => p.classList.remove('active'));
+    }
+
+    /* CARIMBO */
+    function applyStamp(stampText) {
+      const book = books.find(b => b.id === currentBookId);
+      if (book) {
+        book.stampText = stampText;
+        applyStampUI(stampText);
+      }
+      saveToStorage();
+      closeAllPalettes();
+    }
+
+    function applyStampUI(stampText) {
+      const stampBadge = document.getElementById('stampBadge');
+      if (stampText) {
+        stampBadge.textContent = stampText;
+        stampBadge.classList.add('active');
+      } else {
+        stampBadge.classList.remove('active');
+      }
+    }
+
+    /* POST-IT */
+    function insertPostIt() {
+      const randomColor = postItColors[Math.floor(Math.random() * postItColors.length)];
+      const postItHtml = `<div class="inline-postit" contenteditable="true" style="background: ${randomColor};" placeholder="Lembrete...">Lembrete...</div>&nbsp;`;
+      document.execCommand('insertHTML', false, postItHtml);
+    }
+
+    /* ADESIVOS ILUSTRADOS, ARRASTÁVEIS, REDIMENSIONÁVEIS E REMOVÍVEIS */
+    function addSticker(type) {
+      const book = books.find(b => b.id === currentBookId);
+      if (!book) return;
+      if (!book.pages[currentPageIndex]) book.pages[currentPageIndex] = {html:'', stickers:[]};
+      const page = book.pages[currentPageIndex];
+      if (!page.stickers) page.stickers = [];
+      const container = document.getElementById('openedBookContainer');
+      const content = document.getElementById('modalContent');
+      const size = stickerSizePixels[selectedStickerSize] || stickerSizePixels[1];
+      // A posição é relativa ao livro inteiro, mas o adesivo começa na área de escrita.
+      const containerRect = container.getBoundingClientRect();
+      const contentRect = content.getBoundingClientRect();
+      const areaLeft = contentRect.left - containerRect.left - container.clientLeft;
+      const areaTop = contentRect.top - containerRect.top - container.clientTop;
+      const areaRight = areaLeft + content.clientWidth;
+      const areaBottom = areaTop + content.clientHeight;
+      const x = areaRight - size - 18;
+      const y = areaTop + 18;
+      const sticker = { type, x, y, width: size, height: size };
+      page.stickers.push(sticker);
+      renderStickersOnPage(page.stickers);
+      saveCurrentPage();
+      saveToStorage(); // Persiste o adesivo imediatamente, mesmo antes de sair do livro.
+      closeAllPalettes();
+    }
+    // Recria os adesivos usando sempre coordenadas relativas ao livro (seu pai posicionado).
+    // A posição é sincronizada explicitamente com o objeto da página antes de salvar.
+    function renderStickersOnPage(stickers) {
+      const container = document.getElementById('openedBookContainer');
+      container.querySelectorAll('.movable-sticker').forEach(el => el.remove());
+      (stickers || []).forEach((sticker, index) => {
+        if (!sticker.type) sticker.type = 'flower';
+        // Compatibilidade com dados antigos: normaliza dimensões para um dos 3 tamanhos fixos.
+        const savedSize = Math.max(Number(sticker.width) || 0, Number(sticker.height) || 0);
+        const fixedSize = savedSize <= 82 ? stickerSizePixels[1] : (savedSize <= 115 ? stickerSizePixels[2] : stickerSizePixels[3]);
+        sticker.width = fixedSize;
+        sticker.height = fixedSize;
+        const el = document.createElement('div');
+        el.className = 'movable-sticker';
+        el.dataset.stickerIndex = String(index);
+        el._stickerRef = sticker;
+        el.style.left = (Number.isFinite(Number(sticker.x)) ? Number(sticker.x) : Math.max(10, container.clientWidth - 175)) + 'px';
+        el.style.top = (Number.isFinite(Number(sticker.y)) ? Number(sticker.y) : 105) + 'px';
+        el.style.width = sticker.width + 'px';
+        el.style.height = sticker.height + 'px';
+        el.setAttribute('aria-label', stickerLabels[sticker.type] || 'Adesivo');
+        const img = document.createElement('img');
+        img.src = stickerData(sticker.type); img.alt = stickerLabels[sticker.type] || 'Adesivo';
+        const remove = document.createElement('button');
+        remove.className = 'sticker-remove'; remove.type = 'button'; remove.textContent = '×'; remove.title = 'Remover adesivo';
+        remove.addEventListener('pointerdown', e => e.stopPropagation());
+        let startX = 0, startY = 0, originX = 0, originY = 0, moved = false;
+        el.addEventListener('click', e => {
+          if (e.target === remove || !isEditing || moved) return;
+          container.querySelectorAll('.movable-sticker').forEach(other => {
+            other.classList.remove('sticker-selected');
+            const btn = other.querySelector('.sticker-remove'); if (btn) btn.style.display = 'none';
+          });
+          el.classList.add('sticker-selected'); remove.style.display = 'block';
+        });
+        remove.addEventListener('click', e => {
+          e.stopPropagation(); if (!isEditing) return;
+          const currentBook = books.find(b => b.id === currentBookId);
+          const page = currentBook && currentBook.pages[currentPageIndex];
+          if (page && Array.isArray(page.stickers)) {
+            const idx = page.stickers.indexOf(el._stickerRef);
+            if (idx >= 0) page.stickers.splice(idx, 1);
+            syncStickerPositions(); saveCurrentPage(); saveToStorage();
+            renderStickersOnPage(page.stickers);
+          }
+        });
+        el.append(img, remove);
+        el.addEventListener('pointerdown', e => {
+          if (!isEditing || e.target === remove) return;
+          // Não há alça de redimensionamento: os tamanhos 1, 2 e 3 são fixos.
+          activeStickerDrag = el; moved = false;
+          startX = e.clientX; startY = e.clientY;
+          originX = Number.parseFloat(el.style.left) || 0;
+          originY = Number.parseFloat(el.style.top) || 0;
+          try { el.setPointerCapture(e.pointerId); } catch (_) {}
+          el.style.cursor = 'grabbing'; e.preventDefault(); e.stopPropagation();
+        });
+        el.addEventListener('pointermove', e => {
+          if (activeStickerDrag !== el) return;
+          if (!moved && Math.abs(e.clientX - startX) < 3 && Math.abs(e.clientY - startY) < 3) return;
+          moved = true;
+          // Sem limites artificiais: pode ficar sobre linhas, título, cabeçalho, rodapé
+          // ou ultrapassar a área de escrita. As coordenadas usam sempre o livro como origem.
+          const rawX = originX + e.clientX - startX;
+          const rawY = originY + e.clientY - startY;
+          const stickerRef = el._stickerRef;
+          stickerRef.x = rawX;
+          stickerRef.y = rawY;
+          el.style.left = stickerRef.x + 'px'; el.style.top = stickerRef.y + 'px';
+        });
+        const finish = () => {
+          if (activeStickerDrag !== el) return;
+          activeStickerDrag = null; el.style.cursor = 'grab';
+          syncStickerPositions(); saveCurrentPage(); saveToStorage();
+          // Evita que o clique que sucede ao arrasto selecione o adesivo.
+          if (moved) setTimeout(() => { moved = false; }, 0);
+        };
+        el.addEventListener('pointerup', finish); el.addEventListener('pointercancel', finish);
+        if (!isEditing) { remove.style.display = 'none'; el.style.resize = 'none'; }
+        else remove.style.display = 'none';
+        container.appendChild(el);
+      });
+    }
+
+    function syncStickerPositions() {
+      const container = document.getElementById('openedBookContainer');
+      if (!container) return;
+      container.querySelectorAll('.movable-sticker').forEach(el => {
+        const sticker = el._stickerRef;
+        if (!sticker) return;
+        const x = Number.parseFloat(el.style.left), y = Number.parseFloat(el.style.top);
+        if (Number.isFinite(x)) sticker.x = x;
+        if (Number.isFinite(y)) sticker.y = y;
+        sticker.width = el.offsetWidth || Number(sticker.width) || 132;
+        sticker.height = el.offsetHeight || Number(sticker.height) || 132;
+      });
+    }
+
+    /* Exportação em PDF: abre uma versão de impressão com todas as páginas e permite salvar como PDF. */
+    function exportBookPDF() {
+      saveCurrentPage();
+      const book = books.find(b => b.id === currentBookId);
+      if (!book) return;
+      book.title = document.getElementById('modalTitle').value || 'Novo Estudo';
+      saveToStorage();
+      const printWindow = window.open('', '_blank');
+      if (!printWindow) { alert('O navegador bloqueou a janela de exportação. Permita pop-ups para este arquivo e tente novamente.'); return; }
+      const theme = getComputedStyle(document.getElementById('openedBookContainer'));
+      const bg = theme.backgroundColor || '#fdf6e7';
+      const lines = getComputedStyle(document.getElementById('openedBookContainer')).getPropertyValue('--book-lines').trim() || '#e5d5c5';
+      const pagesHtml = book.pages.map((page, i) => {
+        const stickersHtml = (page.stickers || []).map(st => `<img class="print-sticker" style="left:${Number(st.x)||0}px;top:${Number(st.y)||0}px;width:${Number(st.width)||132}px;height:${Number(st.height)||132}px" src="${stickerData(st.type || 'flower')}" alt="">`).join('');
+        const stamp = book.stampText ? `<div class="print-stamp">${escapeHtml(book.stampText)}</div>` : '';
+        return `<section class="print-page"><div class="print-tape" style="background:${book.tapeColor || '#d8b2b9'}"></div>${stamp}<h1>${escapeHtml(book.title)}</h1><div class="print-content">${page.html || ''}</div>${stickersHtml}<footer>Página ${i+1} de ${book.pages.length}</footer></section>`;
+      }).join('');
+      printWindow.document.open();
+      printWindow.document.write(`<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>${escapeHtml(book.title)} - PDF</title><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet"><style>
+      @page{size:A4;margin:12mm}*{box-sizing:border-box}body{margin:0;color:${getComputedStyle(document.getElementById('modalContent')).color};font-family:'Caveat',cursive}.print-page{position:relative;height:273mm;overflow:hidden;padding:18mm 14mm 16mm 22mm;background-color:${bg};background-image:linear-gradient(${lines} 1px,transparent 1px);background-size:100% 9mm;border:1px solid #ddd;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.print-page:last-child{page-break-after:auto}.print-page:before{content:'';position:absolute;top:0;bottom:0;left:17mm;width:1px;background:#e8a5a5}.print-page h1{font: bold 25pt 'Great Vibes',cursive;margin:0 0 3mm;position:relative;z-index:1}.print-content{position:relative;z-index:1;font:16pt/9mm 'Caveat',cursive;white-space:normal;overflow-wrap:anywhere}.print-content>*{margin-block:0!important;line-height:9mm!important}.custom-highlight{padding:0 2px;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}.inline-postit{display:inline-block;min-width:45mm;max-width:65mm;min-height:20mm;padding:3mm;margin:1mm 2mm;box-shadow:2px 4px 8px #0002;font:14pt 'Caveat',cursive;color:#333;vertical-align:middle;-webkit-print-color-adjust:exact;print-color-adjust:exact}.print-sticker{position:absolute;object-fit:contain;z-index:3}.print-stamp{position:absolute;right:18mm;top:14mm;border:2px dashed #b85c5c;color:#b85c5c;padding:2mm 4mm;transform:rotate(-8deg);font: bold 10pt 'Playfair Display',serif;background:#fff0f0bf}.print-tape{position:absolute;top:-3mm;left:42%;width:45mm;height:9mm;opacity:.9;transform:rotate(-2deg)}footer{position:absolute;bottom:4mm;right:7mm;font:9pt 'Playfair Display',serif;opacity:.7}@media screen{body{background:#eee;padding:10mm}.print-page{width:210mm;margin:0 auto 10mm;box-shadow:0 2px 12px #0002}}
+      </style></head><body>${pagesHtml}<script>window.onload=()=>{setTimeout(()=>window.print(),500)};<\/script></body></html>`);
+      printWindow.document.close(); closeFabMenu();
+    }
+    function escapeHtml(value) { return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
+
+    /* MENU DISCRETO (+) */
+    function toggleFabMenu() {
+      document.getElementById('fabMenu').classList.toggle('active');
+    }
+
+    function closeFabMenu() {
+      document.getElementById('fabMenu').classList.remove('active');
+    }
+
+    /* CONFIGURAÇÕES E LIXEIRA */
+    function openSettings() {
+      renderTrash();
+      document.getElementById('settingsModal').classList.add('active');
+    }
+
+    function closeSettings() {
+      document.getElementById('settingsModal').classList.remove('active');
+    }
+
+    function setTheme(themeName, save = true) {
+      document.body.setAttribute('data-theme', themeName);
+      if (save) {
+        localStorage.setItem('meu_scrapbook_theme', themeName);
+      }
+    }
+
+    function renderTrash() {
+      const trashList = document.getElementById('trashList');
+      trashList.innerHTML = '';
+
+      if (trash.length === 0) {
+        trashList.innerHTML = '<p style="font-size: 0.9rem; opacity: 0.7; text-align: center;">A lixeira está vazia.</p>';
+        return;
+      }
+
+      trash.forEach((book, index) => {
+        const item = document.createElement('div');
+        item.className = 'trash-item';
+        item.innerHTML = `
+          <span>${book.title || 'Novo Estudo'}</span>
+          <div class="trash-actions">
+            <button class="btn-small" onclick="restoreBook(${index})">Restaurar</button>
+            <button class="btn-small danger" onclick="permanentDelete(${index})">✕</button>
+          </div>
+        `;
+        trashList.appendChild(item);
+      });
+    }
+
+    function restoreBook(index) {
+      const restored = trash.splice(index, 1)[0];
+      books.push(restored);
+      saveToStorage();
+      renderTrash();
+      renderBooks();
+    }
+
+    function permanentDelete(index) {
+      if (confirm('Deseja excluir permanentemente este livro?')) {
+        trash.splice(index, 1);
+        saveToStorage();
+        renderTrash();
+      }
+    }
+
+    function clearAllTrash() {
+      if (trash.length === 0) return;
+      if (confirm('Tem certeza que deseja esvaziar toda a lixeira?')) {
+        trash = [];
+        saveToStorage();
+        renderTrash();
+      }
+    }
+
+    function saveToStorage() {
+      localStorage.setItem('meu_scrapbook_books', JSON.stringify(books));
+      localStorage.setItem('meu_scrapbook_trash', JSON.stringify(trash));
+    }
+
+    // Fechar paletas ao clicar fora
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.editor-toolbar')) {
+        closeAllPalettes();
+      }
+      if (!e.target.closest('.fab-container')) {
+        closeFabMenu();
+      }
+    });
+
+    renderStickerPalette();
+    renderMiniCalendar();
+    initVisualReminder();
+    // Salva o conteúdo digitado sem exigir clique em Salvar.
+    document.getElementById('modalContent').addEventListener('input', () => { updateNotebookLines(); saveCurrentPage(); saveToStorage(); });
+    window.addEventListener('resize', () => requestAnimationFrame(updateNotebookLines));
+    requestAnimationFrame(updateNotebookLines);
+    document.getElementById('modalTitle').addEventListener('input', () => {
+      const book = books.find(b => b.id === currentBookId); if (book) { book.title = document.getElementById('modalTitle').value || 'Novo Estudo'; saveToStorage(); }
+    });
+    renderBooks();
+  </script>
+</body>
+</html>
